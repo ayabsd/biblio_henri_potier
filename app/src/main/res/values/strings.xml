@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">HenriPotierLibrary</string>
+    <string name="empty_list">HenriPotierLibrary</string>
+
 </resources>
