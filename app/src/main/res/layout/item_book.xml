@@ -52,7 +52,7 @@
 
             <TextView
                 android:text="@{itemBook.title}"
-
+                android:lines="3"
                 android:id="@+id/item_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -67,28 +67,14 @@
                 android:textColor="@android:color/background_dark"
                 android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/item_short_desc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/item_name"
-                android:layout_marginTop="5dp"
-                android:ellipsize="marquee"
-                android:focusable="false"
-                android:freezesText="true"
 
-                android:marqueeRepeatLimit="marquee_forever"
-                android:scrollHorizontally="true"
-                android:singleLine="true"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/iteam_avilable"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/item_short_desc"
-                android:layout_alignBottom="@+id/item_short_desc"
+                android:layout_alignBaseline="@+id/item_name"
+                android:layout_alignBottom="@+id/item_name"
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="5dp"
                 android:ellipsize="marquee"
@@ -103,7 +89,9 @@
                 android:visibility="gone" />
 
             <TextView
-                android:id="@+id/item_price"
+                android:text="@{Double.toString(itemBook.price)}"
+
+                android:id="@+id/item_total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -115,7 +103,6 @@
                 android:marqueeRepeatLimit="marquee_forever"
                 android:scrollHorizontally="true"
                 android:singleLine="true"
-                android:text="Rs 20"
                 android:textColor="@android:color/background_dark"
                 android:textSize="15sp"
                 android:textStyle="bold" />

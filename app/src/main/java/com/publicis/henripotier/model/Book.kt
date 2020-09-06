@@ -9,13 +9,44 @@ import com.google.gson.annotations.SerializedName
 /**
  * Created by Aya Boussaadia on 04,September,2020
  */
+data class Book(@PrimaryKey val isbn: String?,
+                @field:SerializedName("title") val title: String?,
+                @field:SerializedName("price") val price: Int?,
+                @field:SerializedName("cover") val cover: String?,
+                @field:SerializedName("synopsis") val synopsis: List<String>?,
+                @field:SerializedName("nbInBasket") var nbInBasket: Int?) : Parcelable {
+    constructor(parcel: Parcel) : this(
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readInt(),
+        parcel.readString(),
+        parcel.createStringArrayList(),
+        parcel.readInt()
+    ) {
+    }
 
-data class Book(@PrimaryKey val isbn: String,
-                @field:SerializedName("title") val title: String,
-                @field:SerializedName("price") val price: Int,
-                @field:SerializedName("cover") val cover: String,
-                @field:SerializedName("synopsis") val synopsis: List<String>,
-                @field:SerializedName("nbInBasket") var nbInBasket: Int)
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(isbn)
+        parcel.writeString(title)
+        if (price != null) {
+            parcel.writeInt(price)
+        }
+        parcel.writeString(cover)
+        parcel.writeStringList(synopsis)
+        nbInBasket?.let { parcel.writeInt(it) }
+    }
 
+    override fun describeContents(): Int {
+        return 0
+    }
 
+    companion object CREATOR : Parcelable.Creator<Book> {
+        override fun createFromParcel(parcel: Parcel): Book {
+            return Book(parcel)
+        }
 
+        override fun newArray(size: Int): Array<Book?> {
+            return arrayOfNulls(size)
+        }
+    }
+}

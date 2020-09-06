@@ -1,5 +1,6 @@
 package com.publicis.henripotier.ui.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -13,13 +14,13 @@ import com.publicis.henripotier.ui.listbooks.BookListViewModel
  */
 
 
-class BooksListAdapter(private val repoListViewModel: BookListViewModel) : RecyclerView.Adapter<BookListViewHolder>() {
+class BooksListAdapter(val mContext : Context , private val repoListViewModel: BookListViewModel) : RecyclerView.Adapter<BookListViewHolder>() {
     var bookList: List<Book> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookListViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val dataBinding = ItemBookBinding.inflate(inflater, parent, false)
-        return BookListViewHolder(dataBinding, repoListViewModel)
+        return BookListViewHolder(mContext , dataBinding, repoListViewModel)
     }
 
     override fun getItemCount() = bookList.count()

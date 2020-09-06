@@ -44,7 +44,7 @@ class BookListActivity : AppCompatActivity() {
     private fun setupAdapter() {
         val viewModel = viewDataBinding.viewmodel
         if (viewModel != null) {
-            adapter = BooksListAdapter(viewDataBinding.viewmodel!!)
+            adapter = BooksListAdapter(this, viewDataBinding.viewmodel!!)
             val layoutManager = LinearLayoutManager(this)
             repo_list_rv.layoutManager = layoutManager
             repo_list_rv.addItemDecoration(DividerItemDecoration(this, layoutManager.orientation))
