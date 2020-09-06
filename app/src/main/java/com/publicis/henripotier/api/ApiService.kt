@@ -10,7 +10,7 @@ import retrofit2.http.Path
  */
 interface ApiService {
     @GET("books")
-    fun getBooks(): Call<List<Book>>
+    fun getListOfBooks(): Call<List<Book>>
 
 
 }

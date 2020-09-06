@@ -5,7 +5,7 @@ package com.publicis.henripotier.utils
  */
 class Constants {
     companion object {
-        const val BASE_URL = "http://35.180.15.36:8081/api/"
+        const val BASE_URL = "http://henri-potier.xebia.fr/"
         const val REQUEST_TIMEOUT_DURATION = 10
         const val DEBUG = true
     }

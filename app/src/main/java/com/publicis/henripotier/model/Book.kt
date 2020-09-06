@@ -9,7 +9,7 @@ import com.google.gson.annotations.SerializedName
 /**
  * Created by Aya Boussaadia on 04,September,2020
  */
-@Entity(tableName = "books")
+
 data class Book(@PrimaryKey val isbn: String,
                 @field:SerializedName("title") val title: String,
                 @field:SerializedName("price") val price: Int,

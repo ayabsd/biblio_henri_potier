@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.publicis.henripotier">
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -8,9 +9,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/network_security"
+
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.listbooks.BooksListActivity"></activity>
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".ui.listbooks.BookListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
