@@ -14,19 +14,20 @@ import com.publicis.henripotier.ui.listbooks.BookListViewModel
  */
 
 
-class BooksListAdapter(val mContext : Context , private val repoListViewModel: BookListViewModel) : RecyclerView.Adapter<BookListViewHolder>() {
+class BooksListAdapter(val mContext: Context, private val repoListViewModel: BookListViewModel) :
+    RecyclerView.Adapter<BookListViewHolder>() {
     var bookList: List<Book> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookListViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val dataBinding = ItemBookBinding.inflate(inflater, parent, false)
-        return BookListViewHolder(mContext , dataBinding, repoListViewModel)
+        return BookListViewHolder(mContext, dataBinding, repoListViewModel)
     }
 
     override fun getItemCount() = bookList.count()
 
     override fun onBindViewHolder(holder: BookListViewHolder, position: Int) {
-       holder.setup(bookList[position])
+        holder.setup(bookList[position])
     }
 
     fun updateRepoList(repoList: List<Book>) {

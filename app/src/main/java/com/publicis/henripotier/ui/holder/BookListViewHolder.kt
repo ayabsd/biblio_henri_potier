@@ -15,8 +15,11 @@ import org.jetbrains.anko.bundleOf
 import org.jetbrains.anko.sdk27.coroutines.onClick
 
 
-class BookListViewHolder constructor( val mContext : Context , private val dataBinding: ViewDataBinding, private val repoListViewModel: BookListViewModel)
-    : RecyclerView.ViewHolder(dataBinding.root) {
+class BookListViewHolder constructor(
+    val mContext: Context,
+    private val dataBinding: ViewDataBinding,
+    private val repoListViewModel: BookListViewModel
+) : RecyclerView.ViewHolder(dataBinding.root) {
     val avatarImage = itemView.product_thumb
     fun setup(itemData: Book) {
         dataBinding.setVariable(BR.itemBook, itemData)
@@ -24,8 +27,10 @@ class BookListViewHolder constructor( val mContext : Context , private val dataB
         Picasso.get().load(itemData.cover).into(avatarImage);
 
         itemView.onClick {
-            val fragmentTransaction = (mContext as AppCompatActivity).supportFragmentManager.beginTransaction()
-            val spFragment = mContext.supportFragmentManager.findFragmentByTag(BookDetailsDialog.BookDetailDialog.TAG)
+            val fragmentTransaction =
+                (mContext as AppCompatActivity).supportFragmentManager.beginTransaction()
+            val spFragment =
+                mContext.supportFragmentManager.findFragmentByTag(BookDetailsDialog.BookDetailDialog.TAG)
             if (spFragment != null) {
                 fragmentTransaction.remove(spFragment)
             }

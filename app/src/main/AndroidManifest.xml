@@ -12,7 +12,7 @@
         android:networkSecurityConfig="@xml/network_security"
 
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.listbooks.BookListActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

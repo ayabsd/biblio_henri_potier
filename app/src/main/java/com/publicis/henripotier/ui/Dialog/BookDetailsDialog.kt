@@ -22,10 +22,8 @@ class BookDetailsDialog {
 
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
-             book = arguments!!.getParcelable(keyBook)!!
+            book = arguments!!.getParcelable(keyBook)!!
         }
-
-
 
         override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
             super.onViewCreated(view, savedInstanceState)
@@ -39,7 +37,6 @@ class BookDetailsDialog {
                 .into(image)
             close.setOnClickListener { v1 -> dismiss() }
         }
-
         override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
@@ -59,4 +56,5 @@ class BookDetailsDialog {
                 return bookDetailsDialog
             }
         }
-    }}
+    }
+}

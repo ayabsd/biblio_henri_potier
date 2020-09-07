@@ -9,12 +9,14 @@ import com.google.gson.annotations.SerializedName
 /**
  * Created by Aya Boussaadia on 04,September,2020
  */
-data class Book(@PrimaryKey val isbn: String?,
-                @field:SerializedName("title") val title: String?,
-                @field:SerializedName("price") val price: Int?,
-                @field:SerializedName("cover") val cover: String?,
-                @field:SerializedName("synopsis") val synopsis: List<String>?,
-                @field:SerializedName("nbInBasket") var nbInBasket: Int?) : Parcelable {
+data class Book(
+    @PrimaryKey val isbn: String?,
+    @field:SerializedName("title") val title: String?,
+    @field:SerializedName("price") val price: Int?,
+    @field:SerializedName("cover") val cover: String?,
+    @field:SerializedName("synopsis") val synopsis: List<String>?,
+    @field:SerializedName("nbInBasket") var nbInBasket: Int?
+) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readString(),
