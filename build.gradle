@@ -11,6 +11,10 @@ buildscript {
     ext.picassoVersion = '2.71828'
     ext.dataBindingCompilerVersion = '3.2.0-alpha10'
     ext.glide_version = "4.8.0"
+    ext.life_cycle = "2.2.0-rc01"
+    ext.room_version = "2.1.0-alpha06"
+
+
 
 
 

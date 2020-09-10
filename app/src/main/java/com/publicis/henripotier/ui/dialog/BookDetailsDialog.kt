@@ -1,4 +1,4 @@
-package com.publicis.henripotier.ui.Dialog
+package com.publicis.henripotier.ui.dialog
 
 import android.os.Bundle
 import android.text.TextUtils
@@ -10,7 +10,6 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.publicis.henripotier.R
 import com.publicis.henripotier.model.Book
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.book_details_dialog.*
 
 /**

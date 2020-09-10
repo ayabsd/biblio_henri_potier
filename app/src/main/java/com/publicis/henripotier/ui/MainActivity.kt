@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.publicis.henripotier.R
 import com.publicis.henripotier.databinding.ActivityMainBinding
+import com.publicis.henripotier.ui.cart.CartFragment
 import com.publicis.henripotier.ui.listbooks.BookListFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         bottom_navigation.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
         openFragment(BookListFragment.newInstanceFragment("", ""));
 
+
     }
 
     var navigationItemSelectedListener: BottomNavigationView.OnNavigationItemSelectedListener =
@@ -34,6 +36,11 @@ class MainActivity : AppCompatActivity() {
                 when (item.getItemId()) {
                     R.id.navigation_home -> {
                         openFragment(BookListFragment.newInstanceFragment("", ""))
+                        return true
+                    }
+
+                    R.id.navigation_panier -> {
+                        openFragment(CartFragment.newInstanceFragment("", ""))
                         return true
                     }
                 }

@@ -6,74 +6,70 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <RelativeLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
             <Button
                 android:id="@+id/close"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:text="x"
-                android:textSize="24dp"
-                android:background="@android:color/white"
                 android:layout_centerInParent="true"
-                >
-
-            </Button>
+                android:background="@android:color/white"
+                android:text="x"
+                android:textSize="24dp"></Button>
 
         </RelativeLayout>
-
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_download"
             android:layout_gravity="center"
+            android:src="@drawable/ic_download"
 
             />
     </LinearLayout>
 
-<ScrollView
-    android:orientation="vertical"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
-
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/title"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="@dimen/text_big"
-            android:textStyle="bold"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/author"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="start"
-            android:textSize="@dimen/text_medium"
-            android:textStyle="italic"/>
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/synopsis"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="start"
-            android:textSize="@dimen/text_medium"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="@dimen/text_big"
+                android:textStyle="bold" />
 
-    </LinearLayout>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:textSize="@dimen/text_medium"
+                android:textStyle="italic" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/synopsis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="start"
+                android:textSize="@dimen/text_medium" />
+
+        </LinearLayout>
     </ScrollView>
 </LinearLayout>
