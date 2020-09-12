@@ -43,10 +43,7 @@ class BookListFragment : Fragment() {
                 .get(BookListViewModel::class.java)
             setLifecycleOwner(viewLifecycleOwner)
 
-
         }
-
-
         return viewDataBinding.root
     }
 
@@ -55,7 +52,6 @@ class BookListFragment : Fragment() {
         viewDataBinding.viewmodel?.fetchBookList()
         setupAdapter()
         setupObservers()
-
     }
 
 
@@ -67,7 +63,6 @@ class BookListFragment : Fragment() {
                 viewDataBinding.viewmodel!!,
                 { view: View?, book: Book ->
                     viewDataBinding.viewmodel?.addBook(book)
-
                 }
             )
             val layoutManager = LinearLayoutManager(activity)
@@ -102,7 +97,6 @@ class BookListFragment : Fragment() {
     }
 
     companion object {
-
         fun newInstanceFragment(param1: String?, param2: String?): BookListFragment? {
             val fragment = BookListFragment()
             val args = Bundle()

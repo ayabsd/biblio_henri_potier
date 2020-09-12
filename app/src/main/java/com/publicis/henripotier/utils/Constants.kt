@@ -8,5 +8,8 @@ class Constants {
         const val BASE_URL = "http://henri-potier.xebia.fr/"
         const val REQUEST_TIMEOUT_DURATION = 10
         const val DEBUG = true
+        const val DB_TABLE_NAME = "table_books"
+        const val DB_NAME = "my_books.db"
+
     }
 }

@@ -15,10 +15,10 @@ import java.util.concurrent.Executors
 
 object Injection {
 
-fun provideBookRepo(context: Context): BookRepository {
-    val database = BooksStrorageDataBase.getInstance(context)
-    return BookRepository( database!!.dao(), Executors.newSingleThreadExecutor())
-}
+    fun provideBookRepo(context: Context): BookRepository {
+        val database = BooksStrorageDataBase.getInstance(context)
+        return BookRepository(database!!.dao(), Executors.newSingleThreadExecutor())
+    }
 
     fun provideViewModelFactoryBookList(context: Context): ViewModelProvider.Factory {
         return BookListViewModelFactory(provideBookRepo(context))
@@ -31,9 +31,8 @@ fun provideBookRepo(context: Context): BookRepository {
 
     fun provideCartRepo(context: Context): CartRepository {
         val database = BooksStrorageDataBase.getInstance(context)
-        return CartRepository( database!!.dao(), Executors.newSingleThreadExecutor())
+        return CartRepository(database!!.dao(), Executors.newSingleThreadExecutor())
     }
-
 
 
 }

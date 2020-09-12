@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="20dp"
     android:orientation="vertical">
 
     <LinearLayout
@@ -16,12 +17,13 @@
 
             <Button
                 android:id="@+id/close"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimen/bt_close_width"
+                android:layout_height="@dimen/bt_close_height"
                 android:layout_centerInParent="true"
                 android:background="@android:color/white"
-                android:text="x"
-                android:textSize="24dp"></Button>
+                android:text="@string/bt_close_text"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/size_24sp"></Button>
 
         </RelativeLayout>
 
@@ -51,7 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textSize="@dimen/text_big"
+                android:textSize="@dimen/size_24sp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -59,8 +61,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="start"
-                android:textSize="@dimen/text_medium"
-                android:textStyle="italic" />
+                android:textSize="@dimen/size_16sp"
+                android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/synopsis"
@@ -68,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="start"
-                android:textSize="@dimen/text_medium" />
+                android:textSize="@dimen/size_16sp" />
 
         </LinearLayout>
     </ScrollView>

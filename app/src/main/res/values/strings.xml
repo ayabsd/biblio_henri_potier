@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Henri Potier Library</string>
     <string name="empty_list">Cart empty </string>
+    <string name="bt_close_text">X </string>
+    <string name="bt_add_to_cart_text">add to cart </string>
+    <string name="check_network">please check your network connection</string>
+
+
 
 </resources>

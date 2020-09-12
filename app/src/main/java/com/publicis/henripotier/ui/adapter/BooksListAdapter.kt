@@ -15,7 +15,11 @@ import com.publicis.henripotier.ui.listbooks.BookListViewModel
  */
 
 
-class BooksListAdapter(val mContext: Context, private val repoListViewModel: BookListViewModel , private val addNewBookListenner: (View?, Book) -> Unit ) :
+class BooksListAdapter(
+    val mContext: Context,
+    private val repoListViewModel: BookListViewModel,
+    private val addNewBookListenner: (View?, Book) -> Unit
+) :
     RecyclerView.Adapter<BookListViewHolder>() {
     var bookList: List<Book> = emptyList()
     var number = 0
@@ -23,7 +27,8 @@ class BooksListAdapter(val mContext: Context, private val repoListViewModel: Boo
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookListViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val dataBinding = com.publicis.henripotier.databinding.ItemBookBinding.inflate(inflater, parent, false)
+        val dataBinding =
+            com.publicis.henripotier.databinding.ItemBookBinding.inflate(inflater, parent, false)
         return BookListViewHolder(mContext, dataBinding, repoListViewModel)
     }
 
@@ -31,7 +36,7 @@ class BooksListAdapter(val mContext: Context, private val repoListViewModel: Boo
 
     override fun onBindViewHolder(holder: BookListViewHolder, position: Int) {
         bookList[position].cartSize = number
-        holder.setup( bookList[position] , addNewBookListenner )
+        holder.setup(bookList[position], addNewBookListenner)
 
 
     }
@@ -40,7 +45,6 @@ class BooksListAdapter(val mContext: Context, private val repoListViewModel: Boo
         this.bookList = repoList
         notifyDataSetChanged()
     }
-
 
 
 }

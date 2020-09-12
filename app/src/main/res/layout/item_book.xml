@@ -65,7 +65,7 @@
                 android:scrollHorizontally="true"
                 android:singleLine="true"
                 android:textColor="@android:color/background_dark"
-                android:textSize="15sp" />
+                android:textSize="@dimen/size_16sp" />
 
 
 
@@ -84,8 +84,8 @@
                 android:scrollHorizontally="true"
                 android:singleLine="true"
                 android:text="Available"
-                android:textColor="#ff669900"
-                android:textSize="15sp"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/size_16sp"
                 android:visibility="gone" />
 
             <TextView
@@ -103,7 +103,7 @@
                 android:scrollHorizontally="true"
                 android:singleLine="true"
                 android:textColor="@android:color/background_dark"
-                android:textSize="15sp"
+                android:textSize="@dimen/size_16sp"
                 android:textStyle="bold" />
 
             <Button
@@ -117,8 +117,8 @@
                 android:background="@color/colorPrimary"
                 android:gravity="center_vertical|center_horizontal"
                 android:textColor="@android:color/white"
-                android:textSize="10sp"
-                android:text="add to cart"
+                android:textSize="@dimen/size_16sp"
+                android:text="@string/bt_add_to_cart_text"
                  />
 
 

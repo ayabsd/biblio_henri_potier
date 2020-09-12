@@ -16,15 +16,18 @@
         android:orientation="vertical">
 
         <TextView
+            android:background="@color/colorPrimary"
             android:layout_gravity="center"
             android:id="@+id/total_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/repo_list_rv"
             android:layout_centerHorizontal="true"
-            android:text="200 DT"
-            android:textColor="@color/colorPrimary"
-            android:textSize="20dp"
+            android:text="@{(Double.toString(cartviewmodel.price))}"
+            android:textColor="@android:color/white"
+            android:padding="10dp"
+            android:textSize="@dimen/size_16sp"
+            android:layout_marginTop="2dp"
             android:textStyle="bold"
             android:visibility="visible" />
 
@@ -53,7 +56,7 @@
                 android:layout_centerInParent="true"
                 android:text="@string/empty_list"
                 android:textColor="@android:color/black"
-                android:textSize="18sp" />
+                android:textSize="@dimen/size_16sp" />
 
 
         </RelativeLayout>

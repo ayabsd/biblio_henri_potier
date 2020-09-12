@@ -12,6 +12,7 @@ import java.util.concurrent.Executor
 /**
  * Created by Aya Boussaadia on 06,September,2020
  */
+
 class BookRepository(private val bookDao: BookDao, private val executor: Executor) {
 
     fun getBookList(onResult: (isSuccess: Boolean, response: List<Book>?) -> Unit) {
@@ -20,8 +21,6 @@ class BookRepository(private val bookDao: BookDao, private val executor: Executo
             override fun onResponse(call: Call<List<Book>>?, response: Response<List<Book>>?) {
                 if (response != null && response.isSuccessful) {
                     onResult(true, response.body())
-
-
                 } else
                     onResult(false, null)
             }
@@ -34,10 +33,6 @@ class BookRepository(private val bookDao: BookDao, private val executor: Executo
     }
 
 
-    fun getAllBasketBook(): LiveData<List<Book>> {
-        return bookDao.getAllBooks()
-    }
-
     fun insertOrUpdateBook(book: Book) {
         val number = bookDao.count(book.isbn)
         if (number == null)
@@ -47,16 +42,6 @@ class BookRepository(private val bookDao: BookDao, private val executor: Executo
             bookDao.insertBook(book)
         } else
             bookDao.updateCart(book.isbn, number + 1)
-    }
-
-    fun deleteBook(book: Book) {
-        val number = bookDao.count(book.isbn)
-        if (number == null)
-            bookDao.insertBook(book)
-        else if (number == 1)
-            bookDao.deleteBook(book.isbn)
-        else
-            bookDao.updateCart(book.isbn, number - 1)
     }
 
 

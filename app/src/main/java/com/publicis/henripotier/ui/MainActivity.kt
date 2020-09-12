@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
         bottom_navigation.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
         openFragment(BookListFragment.newInstanceFragment("", ""));
 
-
     }
 
     var navigationItemSelectedListener: BottomNavigationView.OnNavigationItemSelectedListener =
@@ -38,7 +37,6 @@ class MainActivity : AppCompatActivity() {
                         openFragment(BookListFragment.newInstanceFragment("", ""))
                         return true
                     }
-
                     R.id.navigation_panier -> {
                         openFragment(CartFragment.newInstanceFragment("", ""))
                         return true
@@ -47,7 +45,6 @@ class MainActivity : AppCompatActivity() {
                 return false
             }
         }
-
 
     fun openFragment(fragment: Fragment?) {
         val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()

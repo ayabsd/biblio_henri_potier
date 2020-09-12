@@ -22,22 +22,18 @@ class BookListViewHolder constructor(
     val avatarImage = itemView.product_thumb
 
 
-
     fun setup(
         itemData: Book,
-        addNewBookListenner: (View?, Book) -> Unit) {
+        addNewBookListenner: (View?, Book) -> Unit
+    ) {
         dataBinding.setVariable(BR.itemBook, itemData)
         dataBinding.executePendingBindings()
         Picasso.get().load(itemData.cover).into(avatarImage);
-
-
 
         itemView.add_item.setOnClickListener({ v ->
             addNewBookListenner(v, itemData)
 
         })
-
-
 
         itemView.onClick {
             val fragmentTransaction =

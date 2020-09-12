@@ -6,6 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.publicis.henripotier.model.Book
+import com.publicis.henripotier.utils.Constants
 
 /**
  * Created by Aya Boussaadia on 07,September,2020
@@ -24,7 +25,6 @@ abstract class BooksStrorageDataBase : RoomDatabase() {
     companion object {
 
         private var INSTANCE: BooksStrorageDataBase? = null
-
         fun getInstance(context: Context): BooksStrorageDataBase =
             INSTANCE ?: synchronized(this) {
                 INSTANCE
@@ -32,8 +32,10 @@ abstract class BooksStrorageDataBase : RoomDatabase() {
             }
 
         private fun buildDatabase(context: Context) =
-            Room.databaseBuilder(context.applicationContext,
-                BooksStrorageDataBase::class.java, "my_books.db").allowMainThreadQueries()
+            Room.databaseBuilder(
+                context.applicationContext,
+                BooksStrorageDataBase::class.java, Constants.DB_NAME
+            ).allowMainThreadQueries()
                 .build()
     }
 }

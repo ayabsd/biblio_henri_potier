@@ -26,14 +26,12 @@ class BookListViewModel(private val bookRepository: BookRepository) : BaseViewMo
             if (isSuccess) {
                 empty.value = false
                 bookList.value = response
-
             } else {
                 empty.value = true
-
-
             }
         }
     }
+
     fun addBook(book: Book?) {
         if (book != null ) {
             bookRepository.insertOrUpdateBook(book)

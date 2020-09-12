@@ -19,10 +19,6 @@ interface BookDao{
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertBook(book: Book)
 
-    @Query("SELECT isbn, title, price, cover, synopsis, cartSize FROM Table_Books WHERE cartSize" +
-            " != 0")
-    fun getAllCartElement(): LiveData<List<Book>>
-
     @Query("UPDATE Table_Books SET cartSize = :count WHERE isbn = :isbn")
     fun updateCart(isbn : String, count : Int)
 

@@ -52,40 +52,24 @@ class CartFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // viewDataBinding.cartviewmodel?.fetchBookList()
         setupAdapter()
         setupObservers()
 
-
-    }
-
-
-    companion object {
-
-        fun newInstanceFragment(param1: String?, param2: String?): CartFragment? {
-            val fragment = CartFragment()
-            val args = Bundle()
-            args.putString("param2", param1)
-            args.putString("param2", param2)
-            fragment.setArguments(args)
-            return fragment
-        }
     }
 
     private fun setupAdapter() {
         val viewModel = viewDataBinding.cartviewmodel
         if (viewModel != null) {
             adapter = CartAdapter(
-                activity!!, viewDataBinding.cartviewmodel!!,
+
                 { view: View?, book: Book ->
-
-                   viewModel.addBook(book)
-
+                    viewModel.addBook(book)
 
                 },
                 { view: View?, book: Book ->
 
                     viewModel.removeBook(book)
+
 
                 })
             val layoutManager = LinearLayoutManager(activity)
@@ -107,20 +91,28 @@ class CartFragment : Fragment() {
                 if (it.isNotEmpty()) {
                     progress.visibility = View.INVISIBLE
                     empty.visibility = View.INVISIBLE
-                    //  totalPriceTxt.text = resources.getString(R.string.price_processing)
-                    // viewModelBasketList.getAllOffers(it)
+                    viewDataBinding.cartviewmodel!!.fetchOffers()
+
                 } else {
                     progress.visibility = View.INVISIBLE
                     empty.visibility = View.VISIBLE
                     repo_list_rv.visibility = View.INVISIBLE
                     total_price.visibility = View.INVISIBLE
 
-
-
-                    //totalPriceTxt.text = resources.getString(R.string.empty_basket)
                 }
             }
         })
+    }
+
+    companion object {
+        fun newInstanceFragment(param1: String?, param2: String?): CartFragment? {
+            val fragment = CartFragment()
+            val args = Bundle()
+            args.putString("param2", param1)
+            args.putString("param2", param2)
+            fragment.setArguments(args)
+            return fragment
+        }
     }
 }
 

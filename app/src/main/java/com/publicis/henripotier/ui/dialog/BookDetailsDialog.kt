@@ -36,6 +36,7 @@ class BookDetailsDialog {
                 .into(image)
             close.setOnClickListener { v1 -> dismiss() }
         }
+
         override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
@@ -45,7 +46,7 @@ class BookDetailsDialog {
         }
 
         companion object {
-            var TAG = "BookDetails"
+            var TAG = "BookDetailsDialog"
             var keyBook = "Book"
             fun newInstance(book: Book): BookDetailDialog {
                 val bookDetailsDialog = BookDetailDialog()

@@ -16,13 +16,11 @@ import kotlinx.android.synthetic.main.item_cart.view.*
  * Created by Aya Boussaadia on 10,September,2020
  */
 
-
 class CartViewHolder constructor(
-    val mContext: Context,
-    private val dataBinding: ViewDataBinding,
-    private val repoListViewModel: CartViewModel
+    private val dataBinding: ViewDataBinding
 ) : RecyclerView.ViewHolder(dataBinding.root) {
     val avatarImage = itemView.product_thumb
+
     fun setup(
         itemData: Book,
         addNewBookListenner: (View?, Book) -> Unit,
@@ -30,19 +28,16 @@ class CartViewHolder constructor(
     ) {
         dataBinding.setVariable(BR.itemCart, itemData)
         dataBinding.executePendingBindings()
+
         Picasso.get().load(itemData.cover).into(avatarImage);
+
         itemView.add_cart.setOnClickListener({ v ->
             addNewBookListenner(v, itemData)
-
         })
-
         itemView.remove_cart.setOnClickListener({ v ->
             removeBookListenner(v, itemData)
 
         })
-
-
-
 
     }
 }

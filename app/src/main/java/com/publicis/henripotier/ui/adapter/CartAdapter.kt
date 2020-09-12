@@ -16,20 +16,23 @@ import com.publicis.henripotier.ui.holder.CartViewHolder
  */
 
 
-class CartAdapter(val mContext: Context, private val repoListViewModel: CartViewModel, private val addNewBookListenner: (View?, Book) -> Unit, private val removeBookListenner: (View?, Book) -> Unit) :
+class CartAdapter(
+    private val addNewBookListenner: (View?, Book) -> Unit,
+    private val removeBookListenner: (View?, Book) -> Unit
+) :
     RecyclerView.Adapter<CartViewHolder>() {
     var bookList: List<Book> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-       val dataBinding = ItemCartBinding.inflate(inflater, parent, false)
-        return CartViewHolder(mContext, dataBinding, repoListViewModel)
+        val dataBinding = ItemCartBinding.inflate(inflater, parent, false)
+        return CartViewHolder(dataBinding)
     }
 
     override fun getItemCount() = bookList.count()
 
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
-        holder.setup(bookList[position] , addNewBookListenner , removeBookListenner )
+        holder.setup(bookList[position], addNewBookListenner, removeBookListenner)
     }
 
     fun updateRepoList(repoList: List<Book>) {

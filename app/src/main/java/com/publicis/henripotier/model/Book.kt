@@ -5,11 +5,13 @@ import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import com.publicis.henripotier.utils.Constants
 
 /**
  * Created by Aya Boussaadia on 04,September,2020
  */
-@Entity(tableName = "table_books")
+
+@Entity(tableName = Constants.DB_TABLE_NAME)
 data class Book(
     @PrimaryKey val isbn: String,
     @field:SerializedName("title") val title: String?,
