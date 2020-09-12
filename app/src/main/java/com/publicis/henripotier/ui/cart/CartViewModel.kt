@@ -16,6 +16,8 @@ class CartViewModel(private val bookRepository: CartRepository) : BaseViewModel(
 
 
     var price = MutableLiveData<Double>()
+    var priceInitial = MutableLiveData<Double>()
+
     var bookList: LiveData<List<Book>> = bookRepository.getAllBasketBook()
     var isbnsList: MutableList<String> = ArrayList()
 
@@ -29,6 +31,7 @@ class CartViewModel(private val bookRepository: CartRepository) : BaseViewModel(
             dataLoading.value = false
             if (isSuccess) {
                 empty.value = false
+                priceInitial.value = calculateModule.totalPriceCalculate(bookList.value!!).toDouble()
                 price.value = calculateModule.getFinalPrice(
                     response,
                     calculateModule.totalPriceCalculate(bookList.value!!)
@@ -38,6 +41,7 @@ class CartViewModel(private val bookRepository: CartRepository) : BaseViewModel(
             } else {
                 empty.value = true
                 price.value = 0.0
+                priceInitial.value = 0.0
 
             }
         }
@@ -114,6 +118,7 @@ object calculateModule {
         }
         return price - discountValue
     }
+
 
 
 }

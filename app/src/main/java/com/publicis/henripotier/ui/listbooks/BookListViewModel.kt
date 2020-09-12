@@ -20,7 +20,7 @@ class BookListViewModel(private val bookRepository: BookRepository) : BaseViewMo
     val bookList = MutableLiveData<List<Book>>()
 
     fun fetchBookList() {
-        dataLoading.value = false
+        dataLoading.value = true
         bookRepository.getBookList() { isSuccess, response ->
             dataLoading.value = false
             if (isSuccess) {

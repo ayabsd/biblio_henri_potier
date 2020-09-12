@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
@@ -12,7 +13,6 @@
 
 
     <androidx.cardview.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/cardlist_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,7 +26,7 @@
         card_view:cardCornerRadius="4dp"
         card_view:cardElevation="@dimen/cardview_default_elevation">
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <LinearLayout
             android:id="@+id/top_view"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -52,8 +52,6 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:text="@{itemCart.title}"
-                    android:lines="3"
                     android:id="@+id/item_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -61,13 +59,15 @@
                     android:layout_marginTop="5dp"
                     android:ellipsize="marquee"
                     android:focusable="false"
+                    android:fontFamily="@font/amaranth"
                     android:freezesText="true"
+                    android:lines="3"
                     android:marqueeRepeatLimit="marquee_forever"
                     android:scrollHorizontally="true"
                     android:singleLine="true"
+                    android:text="@{itemCart.title}"
                     android:textColor="@android:color/background_dark"
                     android:textSize="15sp" />
-
 
 
                 <TextView
@@ -80,6 +80,7 @@
                     android:layout_marginLeft="5dp"
                     android:ellipsize="marquee"
                     android:focusable="false"
+                    android:fontFamily="@font/amaranth"
                     android:freezesText="true"
                     android:marqueeRepeatLimit="marquee_forever"
                     android:scrollHorizontally="true"
@@ -90,9 +91,8 @@
                     android:visibility="gone" />
 
                 <TextView
-                    android:text="@{Double.toString(itemCart.price)}"
-
                     android:id="@+id/item_total"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
@@ -100,10 +100,12 @@
                     android:ellipsize="marquee"
                     android:focusable="true"
                     android:focusableInTouchMode="true"
+                    android:fontFamily="@font/amaranth"
                     android:freezesText="true"
                     android:marqueeRepeatLimit="marquee_forever"
                     android:scrollHorizontally="true"
                     android:singleLine="true"
+                    android:text="@{Double.toString(itemCart.price) + ` € `}"
                     android:textColor="@android:color/background_dark"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -117,6 +119,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_toLeftOf="@+id/iteam_amount"
                     android:background="@drawable/round_text_remove_item"
+                    android:fontFamily="@font/amaranth_italic"
                     android:gravity="center_vertical|center_horizontal"
                     android:text="-"
                     android:textColor="#FF0000"
@@ -129,19 +132,20 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_gravity="center_vertical|center_horizontal"
-                    android:layout_marginBottom="10dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_toLeftOf="@+id/add_cart"
-                    android:text="@{Integer.toString(itemCart.cartSize)}"
-
                     android:ellipsize="marquee"
+
                     android:focusable="true"
                     android:focusableInTouchMode="true"
+                    android:fontFamily="@font/amaranth"
                     android:freezesText="true"
                     android:marqueeRepeatLimit="marquee_forever"
                     android:scrollHorizontally="true"
                     android:singleLine="true"
+                    android:text="@{Integer.toString(itemCart.cartSize)}"
                     android:textColor="@android:color/background_dark"
                     android:textSize="20sp" />
 
@@ -149,11 +153,12 @@
                     android:id="@+id/add_cart"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
                     android:layout_gravity="center_vertical|center_horizontal"
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/round_text_add_item"
+                    android:fontFamily="@font/amaranth"
                     android:gravity="center_vertical|center_horizontal"
                     android:text="+"
                     android:textColor="#ff669900"

@@ -92,12 +92,16 @@ class CartFragment : Fragment() {
                     progress.visibility = View.INVISIBLE
                     empty.visibility = View.INVISIBLE
                     viewDataBinding.cartviewmodel!!.fetchOffers()
+                    card_container_price.visibility = View.VISIBLE
+
+
 
                 } else {
                     progress.visibility = View.INVISIBLE
                     empty.visibility = View.VISIBLE
                     repo_list_rv.visibility = View.INVISIBLE
                     total_price.visibility = View.INVISIBLE
+                    card_container_price.visibility = View.INVISIBLE
 
                 }
             }

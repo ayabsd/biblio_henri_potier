@@ -43,6 +43,7 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:layout_margin="20dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -52,7 +53,9 @@
                 android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/amaranth_italic"
                 android:gravity="center"
+                android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/size_24sp"
                 android:textStyle="bold" />
 
@@ -60,6 +63,7 @@
                 android:id="@+id/author"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/amaranth"
                 android:gravity="start"
                 android:textSize="@dimen/size_16sp"
                 android:textStyle="bold" />
@@ -69,6 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/amaranth"
                 android:gravity="start"
                 android:textSize="@dimen/size_16sp" />
 

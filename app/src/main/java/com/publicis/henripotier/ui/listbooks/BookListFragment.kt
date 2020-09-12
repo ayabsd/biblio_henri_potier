@@ -1,12 +1,15 @@
 package com.publicis.henripotier.ui.listbooks
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.R
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -83,16 +86,17 @@ class BookListFragment : Fragment() {
             if (it != null) {
                 if (it.isNotEmpty()) {
 
-                    //  totalPriceTxt.text = resources.getString(R.string.price_processing)
-                    // viewModelBasketList.getAllOffers(it)
                 } else {
-                    //totalPriceTxt.text = resources.getString(R.string.empty_basket)
                 }
             }
         })
 
         viewDataBinding.viewmodel?.toastMessage?.observe(activity!!, Observer {
             activity?.longToast(it)
+
+
+
+
         })
     }
 
