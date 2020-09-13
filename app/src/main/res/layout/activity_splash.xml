@@ -17,7 +17,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/amaranth"
+        android:fontFamily="@font/amaranth_italic"
         android:text="La bibliothèque d'Henri Potier"
         android:textColor="@color/colorPrimary"
         android:textSize="25sp"

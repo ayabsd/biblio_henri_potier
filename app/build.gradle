@@ -37,12 +37,10 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
     implementation "com.android.support:cardview-v7:$rootProject.appCompatVersion"
 
-// Navigation component
     implementation "android.arch.navigation:navigation-fragment:$rootProject.navVersion"
     implementation "android.arch.navigation:navigation-ui:$rootProject.navVersion"
     implementation "android.arch.navigation:navigation-runtime-ktx:$rootProject.navVersion"
     implementation "android.arch.work:work-runtime-ktx:$rootProject.workVersion"
-// Anko
     implementation "org.jetbrains.anko:anko:$rootProject.ankoVersion"
     implementation "org.jetbrains.anko:anko-commons:$rootProject.ankoVersion"
 // Retrofit
